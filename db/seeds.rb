@@ -18,6 +18,12 @@ puts "Creating 30 users..."
 end
 puts "Finished!"
 
+User.create!(
+  username: "jan",
+  password: "12345678",
+  email: "jan@test.com"
+)
+
 Offer.destroy_all
 puts "Creating 30 offers..."
 30.times do |i|
@@ -26,7 +32,7 @@ puts "Creating 30 offers..."
     description: Faker::TvShows::Seinfeld.quote,
     location: Faker::Fantasy::Tolkien.location,
     category: %w(babysitting cooking baking knitting boardgames walk).sample,
-    availability: %w(monday tuesday wednesday thursday friday saturday sunday).sample,
+    availability: %w(Monday😫 Tuesday😒 Wednesday🐸 Thursday🤠 Friday🥳 Saturday🐗 Sunday⛪).sample,
     user: User.all.sample
   )
   puts "#{i + 1}. #{offer.name}"
