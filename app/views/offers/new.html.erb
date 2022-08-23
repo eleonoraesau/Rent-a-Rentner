@@ -1,1 +1,9 @@
-<h1>This is the form for a new offer</h1>
+<h1>Create a new offer</h1>
+        <%= simple_form_for @offer do |f| %>
+          <%= f.input :name, placeholder: 'What is your service called' %>
+          <%= f.input :location, placeholder: 'What City are you from' %>
+          <%= f.input :description, placeholder: 'Provide additional information about what you offer' %>
+          <%= f.input :category, collection: Offer::CATEGORIES %>
+          <%= f.input :availability, collection: Offer::WEEKDAYS %>
+          <%= f.submit class: 'btn btn-flat' %>
+        <% end %>
