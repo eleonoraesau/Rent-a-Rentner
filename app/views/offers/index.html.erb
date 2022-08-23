@@ -1,22 +1,23 @@
 <div class="text-center">
-  <%= link_to "New offer", new_offer_path, class: "btn btn-primary mb-5" %>
+  <%= link_to "create a new offer", new_offer_path, class: "btn btn-primary mb-5" %>
 </div>
-<div class="contrainer">
+<div class="contrainer text-center">
   <div class="row">
     <% @offers.each do |offer| %>
-      <div class="card" style="width: 25rem;">
+      <div class="card" style="width: 30rem;">
           <img class="card-img-top" src="https://i.guim.co.uk/img/media/b3a3ffcc6f5f94c62f211cec6964b102cd7ed70a/0_95_7623_4574/master/7623.jpg?width=620&quality=45&fit=max&dpr=2&s=fcd0fc3e9100d216d22feccb85b76f53" alt="Card image cap">
             <div class="card-body">
                 <div class="card-title">
-                  <%= offer.name %>
+                  <strong><%= offer.name %></strong>
                 </div>
                 <div class="card-text">
                   <%= offer.description %>
                 </div>
                 <p class="btn btn-info"><%= link_to "more info", offer_path(offer) %></p>
                 <div class="card-footer">
-                  <small class="text-muted">Location: <%= offer.location %></small>
                   <%= offer.category %>
+                  <br>
+                  <small class="text-muted">Location: <%= offer.location %></small>
                 </div>
               </div>
             </div>
