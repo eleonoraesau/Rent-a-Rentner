@@ -1,13 +1,13 @@
 
 <div class="text-center">
-  <%= link_to "create a new offer", new_offer_path, class: "btn btn-primary mb-4" %>
+  <%= link_to "create a new offer", new_offer_path, class: "btn btn-primary m-4" %>
 </div>
 <div class="contrainer">
   <div class="row d-flex justify-content-center">
     <% @offers.each do |offer| %>
       <div class="col mb-5">
         <div class="card shadow border mx-auto" style="width: 25rem;">
-            <img class="card-img-top p-2" src="https://i.guim.co.uk/img/media/b3a3ffcc6f5f94c62f211cec6964b102cd7ed70a/0_95_7623_4574/master/7623.jpg?width=620&quality=45&fit=max&dpr=2&s=fcd0fc3e9100d216d22feccb85b76f53" alt="Card image cap">
+            <img class="card-img-top p-2" src="https://source.unsplash.com/random/?grandma" alt="Card image cap">
               <div class="card-body text-center">
                   <div class="card-title">
                     <strong><%= offer.name %></strong>
