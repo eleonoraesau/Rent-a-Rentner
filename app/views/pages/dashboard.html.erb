@@ -1,0 +1,8 @@
+<h1>My bookings</h1>
+<div>
+  <% @my_bookings.each do |my_booking| %>
+    <%= my_booking.comment %>
+    <%= my_booking.start_time %>
+    <%= my_booking.end_time %>
+  <% end %>
+</div>
