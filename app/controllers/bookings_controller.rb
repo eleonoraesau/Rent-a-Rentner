@@ -1,4 +1,5 @@
 class BookingsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :set_offer, only: %i[new create]
 
   def new
@@ -10,8 +11,9 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @offer = Offer.find(params[:offer_id])
     @booking.offer = @offer
+    @booking.user = current_user
     if @booking.save
-      redirect_to offer_path(@offer)
+      redirect_to offers_path
     else
       render 'offers/show', status: :unprocessable_entity
     end
@@ -24,6 +26,6 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking).permit(:comment, :start_date, :end_date)
+    params.require(:booking).permit(:comment, :start_time, :end_time)
   end
 end

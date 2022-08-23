@@ -1,3 +1,4 @@
+
 <div class="cotainer">
   <h1>This is the show page for an offer</h1>
 
@@ -7,7 +8,7 @@
   <h2>Loves: <%= @offer.category %></h2>
   <h2>Available on: <%= @offer.availability %></h2>
 
-
+<% if current_user %>
   <h3>Create Booking</h3>
   <%= simple_form_for [@offer, @booking] do |f| %>
     <%= f.input :comment %>
@@ -15,4 +16,6 @@
     <%= f.input :end_time %>
     <%= f.submit "Book Offer", class: "btn btn-primary" %>
   <% end %>
-</div>
+  <% else %>
+  <%= link_to "Go to Login", new_user_session_path  %>
+  <% end %>
