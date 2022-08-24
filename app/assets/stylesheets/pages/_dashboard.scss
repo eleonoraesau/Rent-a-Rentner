@@ -14,18 +14,6 @@
   border: white 2px solid;
   filter: grayscale(100%);
     -webkit-filter: grayscale(100%);
-  // &:hover {
-  //   width: 70px;
-  //   height: 70px;
-  //   filter: none;
-  //   -webkit-filter: grayscale(0);
-  //   .fa-solid{
-  //     opacity: 100%;
-  //     border: solid 2px red;
-  //     color: red;
-  //   }
-  // }
-
 }
 
 .card {
@@ -36,7 +24,7 @@
       filter: none;
       -webkit-filter: grayscale(0);
     }
-    .fa-solid {
+    .icon-opacit {
       opacity: 100%;
       text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
       color: white;
@@ -44,6 +32,6 @@
   }
 }
 
-.fa-solid{
+.icon-opacit{
   opacity: 0%;
 }
