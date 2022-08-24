@@ -8,6 +8,4 @@ class PagesController < ApplicationController
     @my_offers = current_user.offers
     @my_bookings = current_user.bookings
   end
-
-
 end
