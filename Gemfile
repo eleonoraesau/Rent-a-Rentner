@@ -80,3 +80,5 @@ end
 gem "faker"
 
 gem 'unsplash'
+
+gem 'uri'
