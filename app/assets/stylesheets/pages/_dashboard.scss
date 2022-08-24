@@ -1,0 +1,49 @@
+.card-background-picture{
+  background-size: cover;
+  background-position: center;
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.avatar-bordered{
+  width: 65px;
+  height: 65px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  border: white 2px solid;
+  filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);
+  // &:hover {
+  //   width: 70px;
+  //   height: 70px;
+  //   filter: none;
+  //   -webkit-filter: grayscale(0);
+  //   .fa-solid{
+  //     opacity: 100%;
+  //     border: solid 2px red;
+  //     color: red;
+  //   }
+  // }
+
+}
+
+.card {
+  &:hover {
+    .avatar-bordered {
+      width: 75px;
+      height: 75px;
+      filter: none;
+      -webkit-filter: grayscale(0);
+    }
+    .fa-solid {
+      opacity: 100%;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+      color: white;
+    }
+  }
+}
+
+.fa-solid{
+  opacity: 0%;
+}
