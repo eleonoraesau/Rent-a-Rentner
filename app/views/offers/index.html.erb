@@ -8,13 +8,14 @@
   <div class="row d-flex justify-content-center">
       <% search_results = Unsplash::Photo.search("grannies") %>
       <% n = 0 %>
-    <% @offers.limit(5).each do |offer| %>
-
-
+    <% @offers.each do |offer| %>
       <div class="col mb-5">
         <div class="card shadow border mx-auto" style="width: 25rem;">
             <img class="card-img-top p-2" src=<%= search_results[n].urls[:raw] %> alt="Card image cap">
-            <% n += 1 %>
+            <% if n == 9 %>
+            <% n = 0  %>
+            <% else n += 1%>
+            <% end %>
               <div class="card-body text-center">
                   <div class="card-title">
                     <strong><%= offer.name %></strong>
