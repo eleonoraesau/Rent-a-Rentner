@@ -1,5 +1,4 @@
 
-
 <div class="text-center my-3">
   <div>
     <%= link_to "create a new offer", new_offer_path, class: "btn-50" %>
@@ -8,16 +7,11 @@
 <div class="contrainer">
   <div class="row d-flex justify-content-center">
     <% @offers.each do |offer| %>
-    <% search_results = Unsplash::Photo.search("cats") %>
-    <% serialized_results = URI.open(search_results).read  %>
-    <% results = JSON.parse(serialized_results)  %>
-      <% imgs = [] %>
-      <% 30.times do |img| img = "https://source.unsplash.com/random"  %>
-      <% imgs << img %>
-      <% end %>
+    <% search_results = Unsplash::Photo.search("grannies") %>
+
       <div class="col mb-5">
         <div class="card shadow border mx-auto" style="width: 25rem;">
-            <img class="card-img-top p-2" src=<%= search_results.results.urls.raw %> alt="Card image cap">
+            <img class="card-img-top p-2" src=<%= search_results[0].urls[:raw] %> alt="Card image cap">
               <div class="card-body text-center">
                   <div class="card-title">
                     <strong><%= offer.name %></strong>
