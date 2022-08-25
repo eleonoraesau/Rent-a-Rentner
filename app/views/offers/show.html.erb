@@ -2,7 +2,7 @@
 <div class="container mb-5 d-flex p-2 justify-content-center">
   <div class="card shadow-box border border-white rounded p-2 mt-5">
     <div class="card-body text-align w-400px">
-      <img class="card-img-top p-1 shadow-box img-fluid img-thumbnail" src="https://source.unsplash.com/random/?grandma" alt="Card image cap">
+      <img class="card-img-top p-1 shadow-box img-fluid img-thumbnail" src="https://source.unsplash.com/random/?grandma" alt="Card image cap" >
       <div class="card-title text-center mt-2">
         <strong><h1><%= @offer.name %></h1></strong>
       </div>
@@ -30,8 +30,8 @@
             <%= f.input :comment %>
             <%= f.input :start_time %>
             <%= f.input :end_time %>
-            <div class="text-center">
-            <%= f.submit "Book Offer", class: "btn btn-new" %>
+            <div class="text-center pt-3">
+            <%= f.submit "Book Offer", class: "btn-50" %>
             </div>
           <% end %>
       <% else %>

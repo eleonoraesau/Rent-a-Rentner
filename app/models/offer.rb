@@ -8,4 +8,12 @@ class Offer < ApplicationRecord
   validates :availability, inclusion: { in: WEEKDAYS }
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
+  validates :availability, inclusion: { in: WEEKDAYS}
+
+  include PgSearch::Model
+  pg_search_scope :search_by_category_and_availability_and_address,
+    against: [ :category, :availability, :address ],
+    using: {
+      tsearch: { prefix: true }
+    }
 end

@@ -44,6 +44,26 @@
                 Address: <%= offer.address %>
               </small>
             </div>
+            <img class="card-img-top p-3 img-fluid img-thumbnail" src=<%= search_results[n].urls[:raw] %> alt="Card image cap">
+     <% n += 1 %>
+              <div class="card-body text-center">
+                  <div class="card-title">
+                    <strong><%= offer.name %></strong>
+                  </div>
+                    <div class="card-text m-3">
+                      <%= offer.description %>
+                    </div>
+                    <%= link_to "more info", offer_path(offer), class: "btn-50" %>
+                    <div class="p-3">
+                    <small class="text-muted">Loves: </small>
+                      <%= offer.category %>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">
+                          Address: <%= offer.address %>
+                        </small>
+                    </div>
+                </div>
           </div>
         </div>
       </div>

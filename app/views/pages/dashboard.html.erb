@@ -1,15 +1,15 @@
-<h1>My bookings</h1>
 <div class="contrainer">
+  <div>
+    <h1 class="text-center p-3"><strong>MY BOOKINGS</strong></h1>
+  </div>
   <div class="row d-flex justify-content-center">
     <% @my_bookings.each do |my_booking| %>
       <div class="col mb-5">
-        <div class="card shadow border mx-auto" style="width: 25rem;">
-
-            <div class="card-background-picture p-2 d-flex justify-content-around" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/random/?grandma)">
-                <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar-bordered" %>
+        <div class="card shadow-box border border-white p-2 mt-5 mx-auto rounded" style="width: 25rem;">
+            <div class="card-background-picture p-2 d-flex justify-content-around rounded" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/random/?grandma)">
+                <%= image_tag "https://pbs.twimg.com/media/B94ZbDsIUAAy2gw.jpg", class: "avatar-bordered" %>
                 <i class="icon-opacit fa-solid fa-link" style="font-size: 2em"></i>
                 <%= image_tag "https://images.unsplash.com/photo-1442458370899-ae20e367c5d8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Z3JhbmRtYXxlbnwwfDB8MHx8&auto=format&fit=crop&w=800&q=60", class: "avatar-bordered" %>
-
             </div>
               <div class="card-body text-center">
                   <div class="card-title">
@@ -18,6 +18,10 @@
                     <div class="card-text m-3">
                     <small class="text-muted">Comment: </small>
                       <%= my_booking.comment %>
+                    </div>
+                    <br>
+                     <div class="py-3">
+                      <%= link_to "remove this booking", booking_path(my_booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn-50" %>
                     </div>
                     <div class="card-footer">
                         <small class="text-muted">

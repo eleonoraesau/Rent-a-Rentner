@@ -1,6 +1,9 @@
 class BookingsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :set_offer, only: %i[new create]
+  def index
+    @bookings = Booking.all
+  end
 
   def new
     @offer = Offer.find(params[:offer_id])
@@ -17,6 +20,14 @@ class BookingsController < ApplicationController
     else
       render 'offers/show', status: :unprocessable_entity
     end
+  end
+
+  def destroy
+    @booking = Booking.find(params[:id])
+    return unless @booking.user == current_user
+
+    @booking.destroy
+    redirect_to booking_path, status: :see_other
   end
 
   private
