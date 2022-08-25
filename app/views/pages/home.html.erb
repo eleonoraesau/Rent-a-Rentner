@@ -3,6 +3,23 @@
       <h1>Find a granny near you and book a service of your choice</h1>
       <p>Find the nicest grannies around you</p>
       <a href="/offers"><button class="custom-btn btn-12"><span>GRANNIES!</span><span>Book Grannie</span></button></a>
+
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-sm-8">
+          <%= form_with url: offers_path, method: :get, class: "d-flex py-5" do %>
+            <%= text_field_tag :query,
+              params[:query],
+              class: "form-control",
+              placeholder: "Find a granny"
+            %>
+            <%= submit_tag "Search", class: "btn btn-primary" %>
+          <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+
     </div>
   </div>
 
