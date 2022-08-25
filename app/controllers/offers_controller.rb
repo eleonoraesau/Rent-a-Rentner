@@ -10,7 +10,7 @@ class OffersController < ApplicationController
         lat: offer.latitude,
         lng: offer.longitude
       }
-
+    end
     if params[:query].present?
       @offers = Offer.search_by_category_and_availability_and_address(params[:query])
     else
