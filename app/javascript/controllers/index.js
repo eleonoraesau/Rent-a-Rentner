@@ -9,3 +9,6 @@ application.register("hello", HelloController)
 
 import MapController from "./map_controller"
 application.register("map", MapController)
+
+import DisplayMapController from "./display-map_controller"
+application.register("display-map", DisplayMapController)
