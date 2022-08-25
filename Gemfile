@@ -84,3 +84,5 @@ gem 'unsplash'
 gem 'uri', '~> 0.11.0'
 
 gem 'json', '~> 2.6', '>= 2.6.2'
+
+gem "geocoder"
