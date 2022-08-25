@@ -5,38 +5,44 @@
   </div>
 </div>
 <div class="contrainer">
-<div style="width: 100%; height: 600px;"
-  data-controller="map"
-  data-map-markers-value="<%= @markers.to_json %>"
-  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
-  <div class="row d-flex justify-content-center">
-      <% search_results = Unsplash::Photo.search('grannies',1, 30, 'landscape') %>
-      <% n = 0 %>
-    <% @offers.each do |offer| %>
-      <div class="col mb-5">
-        <div class="card shadow border mx-auto" style="width: 25rem;">
-            <img class="card-img-top p-2" src=<%= search_results[n].urls[:raw] %> alt="Card image cap">
-     <% n += 1 %>
-              <div class="card-body text-center">
-                  <div class="card-title">
-                    <strong><%= offer.name %></strong>
-                  </div>
-                    <div class="card-text m-3">
-                      <%= offer.description %>
-                    </div>
-                    <%= link_to "book this granny", offer_path(offer), class: "btn btn-light border border-dark m-4" %>
-                    <div class="p-3">
-                    <small class="text-muted">Loves: </small>
-                      <%= offer.category %>
-                    </div>
-                    <div class="card-footer">
-                        <small class="text-muted">
-                          Address: <%= offer.address %>
-                        </small>
-                    </div>
-                </div>
-          </div>
-        </div>
-    <% end %>
+  <div class="row justify-content-center text-center">
+  <button class="btn btn-primary" style="width: 150px;"><i class="fa-solid fa-list" style="color: white"></i> List</button>
+  <button class="btn btn-success" style="width: 150px; color: white;" data-action="click-map#show">
+  <i class="fa-solid fa-map-location-dot" style="color: white"></i>
+   Map</button>
   </div>
+  <div style="width: 100%; height: 600px; display: none;"
+    data-controller="map"
+    data-map-markers-value="<%= @markers.to_json %>"
+    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+    <div class="row d-flex justify-content-center">
+        <% search_results = Unsplash::Photo.search('grannies',1, 30, 'landscape') %>
+        <% n = 0 %>
+      <% @offers.each do |offer| %>
+        <div class="col mb-5">
+          <div class="card shadow border mx-auto" style="width: 25rem;">
+              <img class="card-img-top p-2" src=<%= search_results[n].urls[:raw] %> alt="Card image cap">
+      <% n += 1 %>
+                <div class="card-body text-center">
+                    <div class="card-title">
+                      <strong><%= offer.name %></strong>
+                    </div>
+                      <div class="card-text m-3">
+                        <%= offer.description %>
+                      </div>
+                      <%= link_to "book this granny", offer_path(offer), class: "btn btn-light border border-dark m-4" %>
+                      <div class="p-3">
+                      <small class="text-muted">Loves: </small>
+                        <%= offer.category %>
+                      </div>
+                      <div class="card-footer">
+                          <small class="text-muted">
+                            Address: <%= offer.address %>
+                          </small>
+                      </div>
+                  </div>
+            </div>
+          </div>
+      <% end %>
+    </div>
 </div>
