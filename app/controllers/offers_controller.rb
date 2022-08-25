@@ -4,8 +4,15 @@ class OffersController < ApplicationController
   # before_action :set_user, only: [:new, :create]
 
   def index
+    @offers = Offer.all
+    @markers = @offers.geocoded.map do |offer|
+      {
+        lat: offer.latitude,
+        lng: offer.longitude
+      }
+
     if params[:query].present?
-      @offers = Offer.search_by_category_and_availability_and_location(params[:query])
+      @offers = Offer.search_by_category_and_availability_and_address(params[:query])
     else
       @offers = Offer.all
     end

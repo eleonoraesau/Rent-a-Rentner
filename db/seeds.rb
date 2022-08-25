@@ -24,13 +24,14 @@ User.create!(
   email: "jan@test.com"
 )
 
+Faker::Config.locale = 'de'
 Offer.destroy_all
 puts "Creating 30 offers..."
 30.times do |i|
   offer = Offer.create!(
     name: Faker::TvShows::BojackHorseman.character,
     description: Faker::TvShows::Seinfeld.quote,
-    location: Faker::Fantasy::Tolkien.location,
+    address: Faker::Address.street_address,
     category: %w(babysitting cooking baking knitting boardgames walk).sample,
     availability: %w(Monday😫 Tuesday😒 Wednesday🐸 Thursday🤠 Friday🥳 Saturday🐗 Sunday⛪).sample,
     user: User.all.sample
