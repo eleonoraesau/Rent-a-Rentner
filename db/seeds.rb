@@ -31,7 +31,7 @@ puts "Creating 30 offers..."
   offer = Offer.create!(
     name: Faker::TvShows::BojackHorseman.character,
     description: Faker::TvShows::Seinfeld.quote,
-    address: Faker::Address.full_address,
+    address: Faker::Address.street_address,
     category: %w(babysitting cooking baking knitting boardgames walk).sample,
     availability: %w(Monday😫 Tuesday😒 Wednesday🐸 Thursday🤠 Friday🥳 Saturday🐗 Sunday⛪).sample,
     user: User.all.sample
