@@ -8,8 +8,9 @@ Rails.application.routes.draw do
   # root "articles#index"
   # resources :users do
   resources :offers, except: [:destroy, :edit, :update] do
-    resources :bookings, only: [:new, :create, :index, :collection]
+    resources :bookings, only: [:new, :create, :show, :index, :collection]
   end
   # end
+  resources :bookings, only: :destroy
   get "dashboard", to: "pages#dashboard"
 end

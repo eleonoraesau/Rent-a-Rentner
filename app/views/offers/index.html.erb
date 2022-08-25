@@ -11,7 +11,7 @@
     <% @offers.each do |offer| %>
       <div class="col mb-5">
         <div class="card shadow border mx-auto" style="width: 25rem;">
-            <img class="card-img-top p-2" src=<%= search_results[n].urls[:raw] %> alt="Card image cap">
+            <img class="card-img-top p-3 img-fluid img-thumbnail" src=<%= search_results[n].urls[:raw] %> alt="Card image cap">
      <% n += 1 %>
               <div class="card-body text-center">
                   <div class="card-title">
@@ -20,7 +20,7 @@
                     <div class="card-text m-3">
                       <%= offer.description %>
                     </div>
-                    <%= link_to "book this granny", offer_path(offer), class: "btn btn-light border border-dark m-4" %>
+                    <%= link_to "more info", offer_path(offer), class: "btn-50" %>
                     <div class="p-3">
                     <small class="text-muted">Loves: </small>
                       <%= offer.category %>
