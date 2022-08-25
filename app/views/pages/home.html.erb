@@ -5,9 +5,8 @@
       <a href="/offers"><button class="custom-btn btn-12"><span>GRANNIES!</span><span>Book Grannie</span></button></a>
 
     <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-sm-8">
-          <%= form_with url: offers_path, method: :get, class: "d-flex py-5" do %>
+      <div class="align-center-searchbar">
+          <%= form_with url: offers_path, method: :get, class: "d-flex py-5 search-bar" do %>
             <%= text_field_tag :query,
               params[:query],
               class: "form-control",
@@ -16,7 +15,6 @@
             <%= submit_tag "Search", class: "btn btn-primary" %>
           <% end %>
           </div>
-        </div>
       </div>
     </div>
 
@@ -24,14 +22,7 @@
   </div>
 
 <div class="container">
-  <div class="text-center mt-5">
-  <h2>This is how it works</h2>
-    <p>Browse offered services by our beloved grannies</p>
-    <p>Select your desired service and find a suitable timeslot</p>
-    <p>Now enjoy your selected service from our lovely old ladies</p>
-  </div>
-
-  <div class="container text-center border border-white rounded p-3">
+  <div class="container text-center border border-white rounded p-3 mt-4">
     <h3 class="text-center mt-5 pb-5">Our Grannies offer the following services</h3>
       <div class="row">
         <div class="col-sm">
@@ -80,7 +71,7 @@
 <br>
 <br>
 
-  <div class="row justify-content-center mt-3">
+  <div class="row justify-content-center">
     <div class="col-6">
     <h2 class="text-center p-2"><strong> Get to know our lovely grannies</strong></h2>
   <div class="w-100 justify-content-center align-items-center">
