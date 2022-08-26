@@ -2,7 +2,9 @@
   <div class="container">
     <h1>Find a granny near you and book a service of your choice</h1>
     <p>Find the nicest grannies around you</p>
-    <a href="/offers"><button class="custom-btn btn-12"><span>GRANNIES!</span><span>Book A Granny</span></button></a>
+    <a href="/offers"><button class="custom-btn btn-12">
+      <span>GRANNIES!</span><span>Book A Granny</span></button>
+    </a>
     <div class="align-center-searchbar">
         <%= form_with url: offers_path, method: :get, class: "d-flex py-5 search-bar" do %>
           <%= text_field_tag :query,
@@ -10,15 +12,15 @@
             class: "form-control",
             placeholder: "Find a granny"
           %>
-          <%= submit_tag "Search", class: "btn btn-primary" %>
+          <%= submit_tag "Search", class: "btn btn-new" %>
         <% end %>
     </div>
   </div>
 </div>
 
 <div class="container">
-  <div class="container text-center border border-white rounded p-3 mt-5">
-    <h3 class="text-center mt- pb-5">Our Grannies offer the following services</h3>
+  <div class="container text-center border border-white rounded p-2 mt-5">
+    <h3 class="text-center pb-5">Our grannies offer the following services</h3>
       <div class="row">
         <div class="col-sm">
           <%= link_to(offers_path, class: "text-decoration-none text-black" ) do %>
@@ -38,34 +40,31 @@
           <p class="mt-3">Baking</p>
           <% end %>
         </div>
+        </div>
+        <div class="row">
+          <div class="col-sm">
+            <%= link_to(offers_path, class: "text-decoration-none text-black" ) do %>
+            <i class="fa-solid fa-socks fa-5x"></i>
+            <p class="mt-3">Knitting</p>
+            <% end %>
+          </div>
+          <div class="col-sm">
+            <%= link_to(offers_path, class: "text-decoration-none text-black" ) do %>
+            <i class="fa-solid fa-chess fa-5x"></i>
+            <p class="mt-3">Boardgames</p>
+            <% end %>
+          </div>
+          <div class="col-sm">
+            <%= link_to(offers_path, class: "text-decoration-none text-black" ) do %>
+            <i class="fa-solid fa-person-walking-with-cane fa-5x"></i>
+            <p class="mt-3">Walking</p>
+            <% end %>
+          </div>
       </div>
-  <div class="container text-center">
-    <div class="row">
-      <div class="col-sm">
-         <%= link_to(offers_path, class: "text-decoration-none text-black" ) do %>
-        <i class="fa-solid fa-socks fa-5x"></i>
-        <p class="mt-3">Knitting</p>
-        <% end %>
-      </div>
-      <div class="col-sm">
-        <%= link_to(offers_path, class: "text-decoration-none text-black" ) do %>
-        <i class="fa-solid fa-chess fa-5x"></i>
-        <p class="mt-3">Boardgames</p>
-        <% end %>
-      </div>
-      <div class="col-sm">
-        <%= link_to(offers_path, class: "text-decoration-none text-black" ) do %>
-        <i class="fa-solid fa-person-walking-with-cane fa-5x"></i>
-        <p class="mt-3">Walking</p>
-        <% end %>
-      </div>
-    </div>
   </div>
 </div>
 
-<br>
-<br>
-
+<div class="container text-center py-5">
   <div class="row justify-content-center">
     <div class="col-6">
     <h2 class="text-center p-2"><strong> Get to know our lovely grannies</strong></h2>
@@ -109,10 +108,11 @@
     </button>
   </div>
   </div>
-    </div>
   </div>
-  <div class="container my-5 border border-white rounded p-3">
+  </div>
+  <div class="my-5 border border-white rounded p-3">
     <p>On a hot spring afternoon, my mother brought my sister and me to visit our grandmother. The three of us were sitting at the kitchen table with our only living grandparent. Such a beautiful afternoon it was, with the sun shining through the windows and onto the clean floor, the Rocky Mountains in the distance, and the hills close by. Surely I couldn’t have asked the Creator for a better day to hear my grandma’s story.</p>
     <p>She had been making berry soup from Saskatoon berries that she had frozen from the past summer. We all had already been telling stories of the past. As my sister and I were talking about living in the city, laughing and having fun with the time we were sharing with our grandma, I asked her, “Mom, what was it like when you were a child?” I call my grandma “Mom” because of how much she is like my own mother.</p>
+  </div>
   </div>
 </div>
