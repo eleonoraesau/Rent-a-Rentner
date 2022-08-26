@@ -1,0 +1,17 @@
+.mapboxgl-popup {
+  max-width: 200px;
+}
+
+.mapboxgl-popup-content {
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
+}
+
+.mapboxgl-marker {
+  border-radius: 50%;
+  background-size: cover;
+  background-position: top center;
+  border-top-left-radius: 50%;
+  border: 2px gainsboro;
+  cursor: pointer;
+}

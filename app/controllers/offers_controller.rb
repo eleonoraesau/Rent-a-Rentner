@@ -8,7 +8,9 @@ class OffersController < ApplicationController
     @markers = @offers.geocoded.map do |offer|
       {
         lat: offer.latitude,
-        lng: offer.longitude
+        lng: offer.longitude,
+        info_window: render_to_string(partial: "info_window", locals: {offer: offer}),
+        image_url: helpers.asset_url("https://fontawesome.com/search?q=old&c=humanitarian")
       }
     end
     if params[:query].present?
