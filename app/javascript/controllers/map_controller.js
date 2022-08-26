@@ -29,14 +29,15 @@ export default class extends Controller {
 
   #initializeMap() {
     mapboxgl.accessToken = this.apiKeyValue
-    console.log("Hello map contoller")
 
     this.map = new mapboxgl.Map({
       container: this.element,
-      style: "mapbox://styles/mapbox/streets-v10"
+      style: "mapbox://styles/mapbox/light-v10",
     })
     this.#addMarkersToMap()
     this.#fitMapToMarkers()
+    this.map.setCenter([9, 51])
+    this.map.setZoom(5)
   }
 
 #addMarkersToMap() {
