@@ -10,7 +10,7 @@ class OffersController < ApplicationController
         lat: offer.latitude,
         lng: offer.longitude,
         info_window: render_to_string(partial: "info_window", locals: {offer: offer}),
-        image_url: helpers.asset_url("https://fontawesome.com/search?q=old&c=humanitarian")
+        image_url: helpers.asset_url("logo.png")
       }
     end
     if params[:query].present?
