@@ -29,6 +29,8 @@
   line-height: 42px;
   -webkit-perspective: 230px;
   perspective: 230px;
+  font-family: 'Dancing Script', cursive;
+  font-size: 20px;
 }
 .btn-12 span {
   background: #FAACA8;
@@ -106,8 +108,8 @@
     color: #fff;
     cursor: pointer;
     display: inline-block;
-    font-family: ITCAvantGardeStd-Bk,Arial,sans-serif;
-    font-size: 14px;
+    font-family: 'Dancing Script', cursive;
+    font-size: 18px;
     font-weight: 400;
     line-height: 20px;
     margin: 0 5px 10px 0;
@@ -121,6 +123,7 @@
     vertical-align: middle;
     white-space: nowrap;
     text-decoration: none;
+
   }
 
   .btn-50:focus {

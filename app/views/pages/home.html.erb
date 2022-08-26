@@ -1,6 +1,6 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1575467678930-c7acd65d6470?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8Z3JhbmRtYXxlbnwwfDB8MHx8&auto=format&fit=crop&w=800&q=60);">
   <div class="container">
-    <h1>Find a granny near you and book a service of your choice</h1>
+    <h1 class="py-2">Find a granny near you and book a service of your choice</h1>
     <p>Find the nicest grannies around you</p>
     <a href="/offers"><button class="custom-btn btn-12">
       <span>GRANNIES!</span><span>Book A Granny</span></button>
@@ -9,7 +9,7 @@
         <%= form_with url: offers_path, method: :get, class: "d-flex py-5 search-bar" do %>
           <%= text_field_tag :query,
             params[:query],
-            class: "form-control",
+            class: "form-control fonti",
             placeholder: "Find a granny"
           %>
           <%= submit_tag "Search", class: "btn btn-new" %>
@@ -25,19 +25,19 @@
         <div class="col-sm">
           <%= link_to(offers_path, class: "text-decoration-none text-black" ) do %>
           <i class="fa-solid fa-baby fa-5x"></i>
-          <p class="mt-3">Babysitting</p>
+          <p class="mt-3 fonti">Babysitting</p>
           <% end %>
         </div>
         <div class="col-sm">
           <%= link_to(offers_path, class: "text-decoration-none text-black" ) do %>
           <i class="fa-solid fa-bowl-rice fa-5x"></i>
-          <p class="mt-3">Cooking</p>
+          <p class="mt-3 fonti">Cooking</p>
           <% end %>
         </div>
         <div class="col-sm">
           <%= link_to(offers_path, class: "text-decoration-none text-black" ) do %>
           <i class="fa-solid fa-cake-candles fa-5x"></i>
-          <p class="mt-3">Baking</p>
+          <p class="mt-3 fonti">Baking</p>
           <% end %>
         </div>
         </div>
@@ -45,19 +45,19 @@
           <div class="col-sm">
             <%= link_to(offers_path, class: "text-decoration-none text-black" ) do %>
             <i class="fa-solid fa-socks fa-5x"></i>
-            <p class="mt-3">Knitting</p>
+            <p class="mt-3 fonti">Knitting</p>
             <% end %>
           </div>
           <div class="col-sm">
             <%= link_to(offers_path, class: "text-decoration-none text-black" ) do %>
             <i class="fa-solid fa-chess fa-5x"></i>
-            <p class="mt-3">Boardgames</p>
+            <p class="mt-3 fonti">Boardgames</p>
             <% end %>
           </div>
           <div class="col-sm">
             <%= link_to(offers_path, class: "text-decoration-none text-black" ) do %>
             <i class="fa-solid fa-person-walking-with-cane fa-5x"></i>
-            <p class="mt-3">Walking</p>
+            <p class="mt-3 fonti">Walking</p>
             <% end %>
           </div>
       </div>

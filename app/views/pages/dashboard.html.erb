@@ -11,8 +11,8 @@
                 <i class="icon-opacit fa-solid fa-link" style="font-size: 2em"></i>
                 <%= image_tag "https://images.unsplash.com/photo-1442458370899-ae20e367c5d8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Z3JhbmRtYXxlbnwwfDB8MHx8&auto=format&fit=crop&w=800&q=60", class: "avatar-bordered" %>
             </div>
-              <div class="card-body text-center">
-                  <div class="card-title">
+              <div class="card-body">
+                  <div class="card-title text-center">
                     <strong><%= my_booking.offer.name %></strong>
                   </div>
                     <div class="card-text m-3">
@@ -20,13 +20,15 @@
                       <%= my_booking.comment %>
                     </div>
                     <br>
-                     <div class="py-3">
-                      <%= link_to "remove this booking", booking_path(my_booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn-50" %>
-                    </div>
-                    <div class="card-footer">
-                        <small class="text-muted">
+                    <div class="card-footer flex-row">
+                        <small class="text-muted ">
                           Location: <%= my_booking.start_time - my_booking.end_time %>
                         </small>
+                     <div class="py-3 d-flex justify-content-end">
+                         <%= link_to(booking_path(my_booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn-new" ) do %>
+                            <i class="fa-solid fa-trash-can"></i>
+                          <% end %>
+                    </div>
                     </div>
                 </div>
           </div>
