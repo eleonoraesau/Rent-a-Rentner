@@ -1,51 +1,56 @@
 <div class="container">
-  <div class="row justify-content-between py-4">
-    <div class="col-6 text-start">
-      <button id="list-btn" class="px-3 btn btn-primary" style="" data-action="click->map#hide"><i class="fa-solid fa-list" style="color: white"></i> List</button>
-      <button id="map-btn" class="px-3 btn btn-success" style="color: white;" data-action="click->map#show" data-remote="true">
-        <i class="fa-solid fa-map-location-dot" style="color: white"></i>Map
-      </button>
-    </div>
-    <div class="col-6 text-end">
-      <div>
-        <%= link_to "create a new offer", new_offer_path, class: "btn-50" %>
+  <div class="row d-flex justify-content-center py-4">
+    <div>
+    <div class="">
+      <div class="text-center">
+        <button id="list-btn" class="px-5 btn btn-12" data-action="click->map#hide">
+          <i class="fa-solid fa-list text-center" style="color: white"></i>
+            <h2 class="">List</h2>
+        </button>
+        <button id="map-btn" class="px-5 btn btn-12" style="color: white;" data-action="click->map#show" data-remote="true">
+          <i class="fa-solid fa-map-location-dot" style="color: white"></i>
+            <h2 id="map-color">Map</h2>
+        </button>
+      </div>
+      <div class="p-2 text-end">
+        <%= link_to "create a new offer 🌸", new_offer_path, class: "btn-50" %>
       </div>
     </div>
+    </div>
   </div>
-  <div class="container">
+  <div>
     <div data-controller="map" data-map-target="show" data-map-markers-value="<%= @markers.to_json %>"
       data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>" class="mb-5">
     </div>
-  </div>
-
-  <div class="row d-flex justify-content-center">
-    <% search_results = Unsplash::Photo.search('grannies',1, 30, 'landscape') %>
-    <% n = 0 %>
-    <% @offers.each do |offer| %>
-      <div class="col mb-5">
-        <div class="card shadow border mx-auto" style="width: 25rem;">
-          <img class="card-img-top p-3 img-fluid img-thumbnail" src=<%= search_results[n].urls[:small] %> alt="Card image cap">
-          <% n += 1 %>
-          <div class="card-body text-center">
-              <div class="card-title fonti">
-                <strong><h3><%= offer.name %></h3></strong>
-              </div>
-                <div class="card-text m-3">
-                  <%= offer.description %>
+    <div class="row d-flex">
+      <% search_results = Unsplash::Photo.search('grannies',1, 30, 'landscape') %>
+      <% n = 0 %>
+      <% @offers.each do |offer| %>
+        <div class="col my-1">
+          <div class="card shadow border mx-auto" style="width: 25rem;">
+            <img class="card-img-top p-3 img-fluid img-thumbnail" src=<%= search_results[n].urls[:small] %> alt="Card image cap">
+            <% n += 1 %>
+            <div class="card-body text-center">
+                <div class="card-title fonti">
+                  <strong><h3><%= offer.name %></h3></strong>
                 </div>
-                <%= link_to "more info", offer_path(offer), class: "btn-50" %>
-                <div class="p-3">
-                  <small class="text-muted">Loves: </small>
-                  <%= offer.category %>
-                </div>
-                <div class="card-footer">
-                    <small class="text-muted">
-                      Address: <%= offer.address %>
-                    </small>
-                </div>
+                  <div class="card-text p-2">
+                    <%= offer.description %>
+                  </div>
+                  <%= link_to "more info", offer_path(offer), class: "btn-50" %>
+                  <div class="p-3">
+                    <small class="text-muted">Loves: </small>
+                    <%= offer.category %>
+                  </div>
+                  <div class="card-footer">
+                      <small class="text-muted">
+                        Address: <%= offer.address %>
+                      </small>
+                  </div>
+            </div>
           </div>
         </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
 </div>

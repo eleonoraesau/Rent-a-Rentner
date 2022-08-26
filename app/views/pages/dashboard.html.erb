@@ -1,6 +1,6 @@
 <div class="contrainer">
   <div>
-    <h1 class="text-center p-3"><strong>MY BOOKINGS</strong></h1>
+    <h1 class="text-center p-3"><strong>🌸 My Bookings 🌸</strong></h1>
   </div>
   <div class="row d-flex justify-content-center">
     <% @my_bookings.each do |my_booking| %>
@@ -12,10 +12,10 @@
                 <%= image_tag "https://images.unsplash.com/photo-1442458370899-ae20e367c5d8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Z3JhbmRtYXxlbnwwfDB8MHx8&auto=format&fit=crop&w=800&q=60", class: "avatar-bordered" %>
             </div>
               <div class="card-body">
-                  <div class="card-title text-center">
-                    <strong><%= my_booking.offer.name %></strong>
+                  <div class="card-title text-center fonti">
+                    <strong><h3><%= my_booking.offer.name %></h3></strong>
                   </div>
-                    <div class="card-text m-3">
+                    <div class="card-text mt-3">
                     <small class="text-muted">Comment: </small>
                       <%= my_booking.comment %>
                     </div>
