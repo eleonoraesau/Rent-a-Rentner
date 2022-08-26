@@ -4,9 +4,9 @@
     <div class="card-body text-align w-400px">
       <img class="card-img-top p-1 shadow-box img-fluid img-thumbnail" src="https://source.unsplash.com/random/?grandma" alt="Card image cap" >
       <div class="card-title text-center mt-2">
-        <strong><h1 class="fonti"><%= @offer.name %></h1></strong>
+        <strong><h1><%= @offer.name %></h1></strong>
       </div>
-      <div class="card-text text-center m-3">
+      <div class="card-text m-3">
       <div class="border border-black rounded-pill p-4 my-2">
         <%= @offer.description %>
       </div>
@@ -15,7 +15,7 @@
           <p>Available on: <strong><%= @offer.availability %></strong></p>
         </div>
       </div>
-      <div class="card-footer text-center">
+      <div class="card-footer">
         <small class="text-muted">
         <p>Address: <%= @offer.address %></p>
         </small>

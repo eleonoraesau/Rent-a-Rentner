@@ -4,12 +4,10 @@
     <div class="container">
       <div class="col d-flex justify-content-center">
         <button id="list-btn" class="px-5 btn btn-12" data-action="click->map#hide">
-          <i class="fa-solid fa-list" style="color: white"></i>
-            <h2 class="py-1">List</h2>
+          <i class="fa-solid fa-list" style="color: white"><h2 class="py-1" id="map-color">List</h2></i>
         </button>
         <button id="map-btn" class="px-5 btn btn-12" style="color: white;" data-action="click->map#show" data-remote="true">
-          <i class="fa-solid fa-map-location-dot" style="color: white"></i>
-            <h2 id="map-color" class="py-1">Map</h2>
+          <i class="fa-solid fa-map-location-dot" style="color: white"><h2 id="map-color" class="py-1">Map</h2></i>
         </button>
       </div>
     </div>
@@ -20,7 +18,7 @@
   </div>
   <div>
     <div data-controller="map" data-map-target="show" data-map-markers-value="<%= @markers.to_json %>"
-      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>" class="my-5 border border-white rounded">
+      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>" class="shadow-sm my-5 border border-white rounded">
     </div>
     <div class="row d-flex">
       <% search_results = Unsplash::Photo.search('grannies',1, 30, 'landscape') %>
