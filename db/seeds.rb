@@ -8,7 +8,7 @@
 
 User.destroy_all
 puts "Creating 30 users..."
-30.times do |i|
+9.times do |i|
   user = User.create!(
     username: Faker::TvShows::Friends.character,
     password: Faker::Internet.password(min_length: 8),
@@ -27,11 +27,11 @@ User.create!(
 Faker::Config.locale = 'de'
 Offer.destroy_all
 puts "Creating 30 offers..."
-30.times do |i|
+9.times do |i|
   offer = Offer.create!(
     name: Faker::TvShows::BojackHorseman.character,
     description: Faker::TvShows::Seinfeld.quote,
-    address: Faker::Address.street_address,
+    address: Faker::Address.street_name,
     category: %w(babysitting cooking baking knitting boardgames walk).sample,
     availability: %w(Monday😫 Tuesday😒 Wednesday🐸 Thursday🤠 Friday🥳 Saturday🐗 Sunday⛪).sample,
     user: User.all.sample
