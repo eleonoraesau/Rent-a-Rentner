@@ -22,9 +22,14 @@
                     <br>
                     <div class="card-footer flex-row">
                         <small class="text-muted ">
-                          Location: <%= my_booking.start_time - my_booking.end_time %>
+                        <p><strong>Details:</strong></p>
+                          Starttime: <%= my_booking.start_time  %>
+                          <br>
+                          Endtime: <%= my_booking.end_time %>
+                          <br>
+                          Address: <%= my_booking.offer.address %>
                         </small>
-                     <div class="py-3 d-flex justify-content-end">
+                     <div class="d-flex justify-content-end">
                          <%= link_to(booking_path(my_booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn-new" ) do %>
                             <i class="fa-solid fa-trash-can"></i>
                           <% end %>
