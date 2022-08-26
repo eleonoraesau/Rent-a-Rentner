@@ -1,26 +1,26 @@
 <div class="container">
   <div class="row d-flex justify-content-center py-4">
     <div>
-    <div class="">
-      <div class="text-center">
+    <div class="container">
+      <div class="col d-flex justify-content-center">
         <button id="list-btn" class="px-5 btn btn-12" data-action="click->map#hide">
-          <i class="fa-solid fa-list text-center" style="color: white"></i>
-            <h2 class="">List</h2>
+          <i class="fa-solid fa-list" style="color: white"></i>
+            <h2 class="py-1">List</h2>
         </button>
         <button id="map-btn" class="px-5 btn btn-12" style="color: white;" data-action="click->map#show" data-remote="true">
           <i class="fa-solid fa-map-location-dot" style="color: white"></i>
-            <h2 id="map-color">Map</h2>
+            <h2 id="map-color" class="py-1">Map</h2>
         </button>
       </div>
+    </div>
       <div class="p-2 text-end">
         <%= link_to "create a new offer 🌸", new_offer_path, class: "btn-50" %>
       </div>
     </div>
-    </div>
   </div>
   <div>
     <div data-controller="map" data-map-target="show" data-map-markers-value="<%= @markers.to_json %>"
-      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>" class="mb-5">
+      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>" class="my-5 border border-white rounded">
     </div>
     <div class="row d-flex">
       <% search_results = Unsplash::Photo.search('grannies',1, 30, 'landscape') %>
